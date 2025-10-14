@@ -1,1 +1,1 @@
-tak działa sqx
+tak działa sql
