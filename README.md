@@ -1,1 +1,1 @@
-tak działa sql
+diagramy
