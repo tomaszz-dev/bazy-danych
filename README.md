@@ -1,1 +1,1 @@
-diagramy
+BAZY DANYCH
