@@ -34,16 +34,16 @@ alter table projekt add foreign key (id_pracownika) references pracownik(id_prac
 #zadanie 2
 
 #dodanie kolumny
-ALTER TABLE zadanie ADD COLUMN godziny_szacunkowe INT DEFAULT 8;
+ALTER TABLE zadanie ADD COLUMN godziny_szacowane INT DEFAULT 8;
 describe zadanie;
 
 #ustawienie wafrtosci
 select * from zadanie;
-UPDATE zadanie SET godziny_szacunkowe=4 WHERE id_zadania=1;
-UPDATE zadanie SET godziny_szacunkowe=12 WHERE id_zadania=3;
+UPDATE zadanie SET godziny_szacowane=4 WHERE id_zadania=1;
+UPDATE zadanie SET godziny_szacowane=12 WHERE id_zadania=3;
 
 #ustaiwnei defaulta na 6 
-ALTER TABLE zadanie change godziny_szacunkowe godziny_szacunkowe INT DEFAULT 6;
+ALTER TABLE zadanie change godziny_szacowane godziny_szacowane INT DEFAULT 6;
 
 #sprawdzenie
 insert into zadanie(nazwa_zadania) VALUES('zaparzenie kawy');
