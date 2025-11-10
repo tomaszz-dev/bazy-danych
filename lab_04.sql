@@ -5,7 +5,7 @@ describe zadanie;
 #usuniecie klucza obcego
 alter table projekt drop foreign key projekt_ibfk_1; 
 alter table zadanie drop foreign key zadanie_ibfk_2;
-alter table projekt drop foreign key projekt;
+
 
 #usuwanie auto_increment
 alter table pracownik change id_pracownika id_pracownika int;
@@ -26,7 +26,7 @@ alter table pracownik add primary key (id_pracownika);
 
 #odtwarzanie kluczy obcych
 alter table zadanie add foreign key (pracownik) references pracownik(id_pracownika) ON DELETE SET NULL;
-alter table projekt add foreign key (id_pracownika) references pracownik(id_pracownika) ON DELETE CASCADE;
+alter table projekt add foreign key (id_pracownika) references pracownik(id_pracownika);
 
 
 
