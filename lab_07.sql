@@ -101,6 +101,24 @@ FROM CATEGORY c
 inner join PRODUCT p ON c.CATEGORY_ID=p.CATEGORY_ID
 group by 1;
 
-#
-SELECT * FROM CATEGORY;
-SELECT * FROM PRODUCT;
+#zadanie 4 #pkt 1
+SELECT ORDER_ID,
+IF(STATUS_ID IN (3, 4, 7, 10), 'zakończone', 'inny') AS Status_Opis
+FROM `ORDER`;
+
+#pkt 2
+SELECT p.PRODUCT_NAME,
+CASE
+WHEN i.AMOUNT = 0 THEN 'brak'
+WHEN i.AMOUNT > 0 AND i.AMOUNT < 10 THEN 'mala ilosc'
+WHEN i.AMOUNT >= 10 AND i.AMOUNT <= 30 THEN 'srednia ilosc'
+WHEN i.AMOUNT > 30 THEN 'duza ilosc'
+ELSE 'nieznana'
+END AS dostepnosc
+FROM PRODUCT p
+JOIN INVENTORY i ON p.PRODUCT_ID = i.PRODUCT_ID;
+
+SELECT
+FULL_NAME,
+IFNULL(TAX_IDENTIFIER, 'indywidualny')
+FROM CLIENT;
