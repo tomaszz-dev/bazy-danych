@@ -106,6 +106,9 @@ SELECT ORDER_ID,
 IF(ORDER_STATUS IN (3, 4, 7, 10), 'zakończone', 'inny') AS Status_Opis
 FROM `ORDER`;
 
+select * from `ORDER`;
+
+
 #pkt 2
 SELECT p.PRODUCT_NAME,
 CASE
@@ -126,4 +129,14 @@ FROM CLIENT;
 
 #ZADANIE 5
 #PKT 1
+select * from CLIENT_ADDRESS;
 
+SELECT CITY, SUBSTR(POSTAL_CODE,1,2) FROM CLIENT_ADDRESS;
+
+
+#PKT 2
+
+SELECT DISTINCT CITY, substr(POSTAL_CODE, 4,2) AS 'kod dla miasta' FROM CLIENT_ADDRESS;
+
+
+#pkt 3 
