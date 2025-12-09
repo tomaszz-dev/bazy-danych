@@ -103,7 +103,7 @@ group by 1;
 
 #zadanie 4 #pkt 1
 SELECT ORDER_ID,
-IF(STATUS_ID IN (3, 4, 7, 10), 'zakończone', 'inny') AS Status_Opis
+IF(ORDER_STATUS IN (3, 4, 7, 10), 'zakończone', 'inny') AS Status_Opis
 FROM `ORDER`;
 
 #pkt 2
@@ -123,3 +123,7 @@ SELECT
 FULL_NAME,
 IFNULL(TAX_IDENTIFIER, 'indywidualny')
 FROM CLIENT;
+
+#ZADANIE 5
+#PKT 1
+
