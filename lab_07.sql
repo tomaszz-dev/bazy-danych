@@ -140,3 +140,12 @@ SELECT DISTINCT CITY, substr(POSTAL_CODE, 4,2) AS 'kod dla miasta' FROM CLIENT_A
 
 
 #pkt 3 
+
+SELECT substr(STREET, 
+position(' ' in STREET) + 1, 
+length(STREET) - 
+position(' ' in STREET) -
+position(' ' in reverse(STREET))
+) AS sama_ulica
+from CLIENT_ADDRESS;
+select reverse(STREET) from CLIENT_ADDRESS;
