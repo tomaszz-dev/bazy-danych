@@ -23,7 +23,7 @@ BEGIN
     DECLARE statusname varchar(100);
     select STATUS_NAME into statusname from ORDER_STATUS
     where STATUS_ID = old.ORDER_STATUS;
-    insert into status_change values (old.ORDER_ID, now(), statusname);
+    insert into order_logi values (old.ORDER_ID, now(), statusname);
 END //
 DELIMITER ;
 
