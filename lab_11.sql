@@ -67,7 +67,25 @@ insert into kierunek_has_przedmioty values
 alter table przedmiot modify opis VARCHAR(100) DEFAULT 'Brak opisu';
 
 #zadanie 8
+alter table kierunek_has_przedmioty 
+drop FOREIGN KEY kierunek_has_przedmioty_ibfk_1;
+
+alter table kierunek_has_przedmioty 
+drop FOREIGN KEY kierunek_has_przedmioty_ibfk_2;
+
+ALTER TABLE student_na_kierunku DROP FOREIGN KEY student_na_kierunku_ibfk_1;
+
+
+ALTER TABLE student
+modify id_studenta INT unsigned not null;
+
+alter table student
+drop PRIMARY KEY;
+
+
 alter table student
 add column indeks int primary key;
 
+
+#zadanie 9
 
