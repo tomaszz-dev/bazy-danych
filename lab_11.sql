@@ -82,10 +82,21 @@ modify id_studenta INT unsigned not null;
 alter table student
 drop PRIMARY KEY;
 
-
 alter table student
-add column indeks int primary key;
+add column indeks int primary key auto_increment;
 
 
 #zadanie 9
+ALTER TABLE kierunek_has_przedmioty 
+ADD COLUMN semestr VARCHAR(10) NOT NULL,
+ADD COLUMN rok_studiow INT UNSIGNED NOT NULL;
+
+UPDATE kierunek_has_przedmioty 
+SET semestr = '2024Z', rok_studiow = 1;
+
+#zadanie 10
+select s.indeks, s.imie, s.nazwisko, k.nazwa_kierunku, khp.semestr, khp.przedmiot from student s
+join student_na_kierunku snk on s.id_studenta = snk.student
+join kierunek k on snk.kierunek = k.id_kierunku
+join kierunek_has_przedmioty khp on khp.kierunek = k.id_kierunku;
 
