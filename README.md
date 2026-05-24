@@ -1,4 +1,4 @@
-##BAZY DANYCH## 
+*BAZY DANYCH*
 
 These are some examples od databases.
-Feel free to usw for learning!
+Feel free to use for learning!
